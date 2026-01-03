@@ -16,7 +16,7 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
-        // new Abdul push code
+        // code commit after public
     }
 }
 
