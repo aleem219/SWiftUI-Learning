@@ -13,7 +13,7 @@ struct ContentView: View {
             Text("Abdul")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .foregroundColor(Color.purple)
+                .foregroundColor(Color.green.opacity(0.4))
                 .multilineTextAlignment(.leading)
         }
         .padding()
