@@ -24,6 +24,7 @@ struct ShapesBootcamp: View {
         
       
             .frame(width: 300,height: 200)
+        //chekinf project
     }
 }
 
