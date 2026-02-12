@@ -21,8 +21,8 @@ struct SpacerBootCamp: View {
 //            .background(.blue)
             Spacer()
             
-            Rectangle()
-                .frame(height: 55)
+                Rectangle()
+                    .frame(height: 55)
         }
         
 //        .background(Color.yellow)
