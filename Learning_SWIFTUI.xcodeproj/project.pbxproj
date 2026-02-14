@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		68B6B0022F3F2103001FA6DC /* ForEachBootCamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B6B0012F3F2103001FA6DC /* ForEachBootCamp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		6899F9AE2F091D82005A3B76 /* Learning_SWIFTUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learning_SWIFTUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68B6B0012F3F2103001FA6DC /* ForEachBootCamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachBootCamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		6899F9A52F091D82005A3B76 = {
 			isa = PBXGroup;
 			children = (
+				68B6B0012F3F2103001FA6DC /* ForEachBootCamp.swift */,
 				6899F9B02F091D82005A3B76 /* Learning_SWIFTUI */,
 				6899F9AF2F091D82005A3B76 /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B6B0022F3F2103001FA6DC /* ForEachBootCamp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
