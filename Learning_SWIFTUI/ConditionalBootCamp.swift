@@ -12,7 +12,7 @@ struct ConditionalBootCamp: View {
     @State var showCircle:Bool = false
     @State var showRectangle:Bool = false
     @State var isLoading:Bool = false
-    
+    // checking new branch
     var body: some View {
         VStack(spacing: 20) {
             
