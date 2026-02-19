@@ -12,8 +12,7 @@ struct ConditionalBootCamp: View {
     @State var showCircle:Bool = false
     @State var showRectangle:Bool = false
     @State var isLoading:Bool = false
-//     checking Updated workflow
-    // new pull request
+// Demo create and update pull request
     var body: some View {
         VStack(spacing: 20) {
             
