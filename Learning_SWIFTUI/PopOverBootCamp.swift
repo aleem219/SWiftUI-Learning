@@ -58,9 +58,9 @@ struct NewScreen:View {
             
             Button {
                 presentationMode.wrappedValue.dismiss()
-//                withAnimation(.spring()) {
-//                    showNewScreen.toggle()
-//                }
+                withAnimation(.spring()) {
+                    showNewScreen.toggle()
+                }
             } label: {
                 Image(systemName: "xmark")
                     .foregroundColor(.white)
