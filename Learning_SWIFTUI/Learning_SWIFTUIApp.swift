@@ -12,7 +12,7 @@ struct Learning_SWIFTUIApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-            //Color(#colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1))
+//            Color(#colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1))
         }
     }
 }

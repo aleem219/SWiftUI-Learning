@@ -6,12 +6,7 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		68504CAF2F49972F00F27822 /* ActionSheetBootCamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68504CAE2F49972F00F27822 /* ActionSheetBootCamp.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		68504CAE2F49972F00F27822 /* ActionSheetBootCamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetBootCamp.swift; sourceTree = "<group>"; };
 		6899F9AE2F091D82005A3B76 /* Learning_SWIFTUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learning_SWIFTUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -37,7 +32,6 @@
 		6899F9A52F091D82005A3B76 = {
 			isa = PBXGroup;
 			children = (
-				68504CAE2F49972F00F27822 /* ActionSheetBootCamp.swift */,
 				6899F9B02F091D82005A3B76 /* Learning_SWIFTUI */,
 				6899F9AF2F091D82005A3B76 /* Products */,
 			);
@@ -125,7 +119,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68504CAF2F49972F00F27822 /* ActionSheetBootCamp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
