@@ -22,6 +22,10 @@ struct ModelBootCamp: View {
         UserModel(displayName: "Abdul", userName: "Abdul21", followerCount: 100, isVerifies: false),
         UserModel(displayName: "Aleem", userName: "Aleem21", followerCount: 900, isVerifies: false),
         UserModel(displayName: "Usmani", userName: "Usmani21", followerCount: 500, isVerifies: true),
+        UserModel(displayName: "Qazi", userName: "Qazi21", followerCount: 700, isVerifies: true),
+        UserModel(displayName: "Abdul", userName: "Abdul21", followerCount: 100, isVerifies: false),
+        UserModel(displayName: "Aleem", userName: "Aleem21", followerCount: 900, isVerifies: false),
+        UserModel(displayName: "Usmani", userName: "Usmani21", followerCount: 500, isVerifies: true),
     ]
     
     var body: some View {
