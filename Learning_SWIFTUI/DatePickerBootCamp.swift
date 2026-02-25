@@ -37,6 +37,7 @@ struct DatePickerBootCamp: View {
                         .accentColor(Color.green)
             //            .datePickerStyle(GraphicalDatePickerStyle())
                         .datePickerStyle(CompactDatePickerStyle())
+                        .modifier(TextDesign())
         }
         
     }
@@ -47,3 +48,10 @@ struct DatePickerBootCamp: View {
 }
 
 
+struct TextDesign: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(Color.red)
+            .frame(maxWidth: .infinity)
+    }
+}
