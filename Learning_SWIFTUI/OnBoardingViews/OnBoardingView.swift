@@ -16,11 +16,25 @@ struct OnBoardingView: View {
      2 - Add age
      3 - Add Gender
      */
-    
     @State var onBoardingState:Int  = 0
+    let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading))
+    
+    // onBoarding inputs
     @State var name:String = ""
     @State var age:Double = 50
     @State var gender:String = ""
+    
+    // for the alert
+    @State var alertTitle:String = ""
+    @State var showAlert:Bool = false
+    
+    // app storage
+    @AppStorage("name") var  currentUserName:String?
+    @AppStorage("age") var  currentUserAge:Int?
+    @AppStorage("gender") var  currentUserGender:String?
+    @AppStorage("signed_in") var currentUserSignedIn:Bool = false
+    
+    
     
     var body: some View {
         ZStack {
@@ -30,12 +44,16 @@ struct OnBoardingView: View {
                 switch onBoardingState{
                 case 0:
                     welcomeSection
+                        .transition(transition)
                 case 1:
                     addNameSection
+                        .transition(transition)
                 case 2:
                     addAgeSection
+                        .transition(transition)
                 case 3:
                     addGenderSection
+                        .transition(transition)
                 default:
                     RoundedRectangle(cornerRadius:  25.0)
                         .foregroundColor(.green)
@@ -51,6 +69,9 @@ struct OnBoardingView: View {
             .padding(30)
             
         }
+        .alert(isPresented: $showAlert, content: {
+            return Alert(title: Text(alertTitle))
+        })
     }
     
     
@@ -61,20 +82,23 @@ struct OnBoardingView: View {
         .background(Color.purple)
 }
 
-// MARK: COMPONENTS
+// MARK: - COMPONENTS
 
 extension OnBoardingView {
+    
     private var bottomButtom: some View {
-        Text("Sign in")
-            .font(.headline)
-            .foregroundColor(.purple)
-            .frame(height: 55)
-            .frame(maxWidth: .infinity)
-            .background(.white)
-            .cornerRadius(10)
-            .onTapGesture {
-                print("kug")
-            }
+        Text(onBoardingState == 0 ? "SIGN UP":
+                onBoardingState == 3 ? "FINISH" : "NEXT")
+        .font(.headline)
+        .foregroundColor(.purple)
+        .frame(height: 55)
+        .frame(maxWidth: .infinity)
+        .background(.white)
+        .cornerRadius(10)
+        .animation(nil, value: onBoardingState)
+        .onTapGesture {
+            handleNextButtonPress()
+        }
     }
     
     private var welcomeSection: some View {
@@ -108,7 +132,7 @@ extension OnBoardingView {
         .padding(30)
     }
     
-
+    
     private var addNameSection: some View {
         VStack(spacing: 40) {
             Spacer()
@@ -144,7 +168,7 @@ extension OnBoardingView {
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
-      
+            
             Slider(value: $age,in: 18...100,step: 1)
                 .accentColor(.white)
             Spacer()
@@ -176,11 +200,59 @@ extension OnBoardingView {
                 Text("Female").tag("Female")
                 Text("Non-Binary").tag("Non-Binary")
             })
-               
+            
             Spacer()
             Spacer()
         }
         .pickerStyle(MenuPickerStyle())
         .padding(30)
+    }
+}
+
+// MARK: - COMPONENTS
+extension OnBoardingView {
+    
+    func handleNextButtonPress() {
+        
+        //CHECK INPUT
+        switch onBoardingState {
+        case 1:
+            guard name.count > 3 else {
+                showAlert(title: "Your name must be at least 3 harecters long!")
+                return
+            }
+        case 3:
+            guard gender.count > 1 else {
+                showAlert(title: "Please slect a gender before moving forword!")
+                return
+            }
+        default:
+            break
+        }
+        
+        
+        // GOT TO NEXRT SECTION
+        if onBoardingState == 3 {
+            // sign in
+            signIn()
+        } else {
+            withAnimation(.spring()) {
+                onBoardingState += 1
+            }
+        }
+    }
+    
+    func signIn() {
+        currentUserName = name
+        currentUserAge = Int(age)
+        currentUserGender = gender
+        withAnimation(.spring()) {
+            currentUserSignedIn = true
+        }
+    }
+    
+    func showAlert(title:String) {
+        alertTitle = title
+        showAlert.toggle()
     }
 }
