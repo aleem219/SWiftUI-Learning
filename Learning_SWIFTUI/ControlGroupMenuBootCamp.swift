@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ontrolGroupMenuBootCamp: View {
+struct ControlGroupMenuBootCamp: View {
     var body: some View {
         Menu("My Menu") {
             ControlGroup {
@@ -50,5 +50,5 @@ struct ontrolGroupMenuBootCamp: View {
 }
 
 #Preview {
-    ontrolGroupMenuBootCamp()
+    ControlGroupMenuBootCamp()
 }
